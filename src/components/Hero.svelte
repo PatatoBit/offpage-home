@@ -4,7 +4,7 @@
 		<h1 class="heading line-clamp-1">every page of the internet</h1>
 
 		<p class="mt-10 mb-2">join the mailing list!</p>
-		<form class="flex w-full flex-row">
+		<form class="flex w-full flex-row gap-1">
 			<label class="floating-label">
 				<span>Your Email</span>
 				<input type="email" placeholder="mail@site.com" class="input" />
