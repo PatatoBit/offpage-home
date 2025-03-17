@@ -1,0 +1,29 @@
+@import 'tailwindcss';
+@plugin "daisyui";
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@font-face {
+	font-family: 'Open Runde';
+	font-style: normal;
+	font-weight: 400;
+	src:
+		local(''),
+		/* IE6-IE8 */ url('/fonts/OpenRunde/OpenRunde-Regular.woff2') format('woff2'),
+		/* Super Modern Browsers */ url('/fonts/OpenRunde/OpenRunde-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Open Runde';
+	font-style: bold;
+	font-weight: 700;
+	src:
+		local(''),
+		/* IE6-IE8 */ url('/fonts/OpenRunde/OpenRunde-Bold.woff2') format('woff2'),
+		/* Super Modern Browsers */ url('/fonts/OpenRunde/OpenRunde-Bold.woff') format('woff');
+}
+
+html,
+body {
+	font-family: 'Open Runde', sans-serif;
+}
