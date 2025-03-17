@@ -4,8 +4,12 @@
 		<h1 class="heading line-clamp-1">every page of the internet</h1>
 
 		<p class="mt-10 mb-2">join the mailing list!</p>
-		<form action="">
-			<input class="input" type="email" placeholder="example@gmail.com" />
+		<form class="flex w-full flex-row">
+			<label class="floating-label">
+				<span>Your Email</span>
+				<input type="email" placeholder="mail@site.com" class="input" />
+			</label>
+
 			<button class="btn btn-primary">Submit</button>
 		</form>
 	</div>
