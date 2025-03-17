@@ -1,4 +1,4 @@
-<section class="page mt-20 content-center">
+<section class="page mt-20 mb-30 content-center">
 	<p>
 		<span class="font-bold underline">offpage</span>
 		is a browser extension that gives every page on the internet a place to chat, share, completely separately

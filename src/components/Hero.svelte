@@ -1,4 +1,4 @@
-<main class="page">
+<main class="page full-height">
 	<div class="page-section flex-2/3">
 		<h1 class="heading line-clamp-1">A community behind</h1>
 		<h1 class="heading line-clamp-1">every page of the internet</h1>
@@ -22,7 +22,6 @@
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		min-height: 80vh;
 	}
 
 	.page-section {
