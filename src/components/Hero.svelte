@@ -1,4 +1,4 @@
-<div class="page">
+<main class="page">
 	<div class="page-section flex-2/3">
 		<h1 class="heading line-clamp-1">A community behind</h1>
 		<h1 class="heading line-clamp-1">every page of the internet</h1>
@@ -15,7 +15,7 @@
 	</div>
 
 	<div class="page-section flex-1/3 border-1 border-red-500"></div>
-</div>
+</main>
 
 <style>
 	.page {
