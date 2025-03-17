@@ -10,7 +10,7 @@
 				<input type="email" placeholder="mail@site.com" class="input" />
 			</label>
 
-			<button class="btn btn-primary" type="submit">subscribe</button>
+			<button class="btn btn-primary" disabled type="submit">subscribe</button>
 		</form>
 	</div>
 
@@ -22,6 +22,7 @@
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
+		min-height: 80vh;
 	}
 
 	.page-section {
