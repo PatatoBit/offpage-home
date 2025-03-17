@@ -10,7 +10,7 @@
 				<input type="email" placeholder="mail@site.com" class="input" />
 			</label>
 
-			<button class="btn btn-primary">Submit</button>
+			<button class="btn btn-primary" type="submit">subscribe</button>
 		</form>
 	</div>
 
