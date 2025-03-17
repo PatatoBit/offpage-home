@@ -34,5 +34,8 @@
 		"onlyBuiltDependencies": [
 			"esbuild"
 		]
+	},
+	"dependencies": {
+		"sass": "^1.85.1"
 	}
 }
