@@ -163,14 +163,13 @@
 		background: white;
 		width: 18rem;
 		max-height: 40rem;
+		box-sizing: border-box;
 
 		padding: 1rem;
 		border-radius: 0.8rem;
 		box-shadow: 1px 9px 10px 2px rgba(0, 0, 0, 0.16);
 		-webkit-box-shadow: 1px 9px 10px 2px rgba(0, 0, 0, 0.16);
 		-moz-box-shadow: 1px 9px 10px 2px rgba(0, 0, 0, 0.16);
-
-		gap: 1rem;
 
 		transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 	}
@@ -238,6 +237,8 @@
 
 		overflow-y: scroll;
 
+		-ms-overflow-style: none; /* Internet Explorer 10+ */
+		scrollbar-width: none; /* Firefox */
 		&::-webkit-scrollbar {
 			display: none;
 		}
@@ -245,25 +246,20 @@
 
 	.comment {
 		display: flex;
-		flex-direction: row;
+		padding-block: 0.5rem;
 		gap: 0.5rem;
-		padding-top: 1rem;
-		width: 100%;
-
-		h5,
-		p {
-			margin: 0;
-		}
 
 		.user-profile {
+			display: flex;
+			flex: auto 1 0;
+
 			img {
 				width: 40px;
 				height: 40px;
 				border-radius: 20rem;
+				object-fit: cover;
 				aspect-ratio: 1/1;
 				border: 1px solid var(--border);
-
-				object-fit: cover;
 			}
 		}
 

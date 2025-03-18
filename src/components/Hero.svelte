@@ -5,7 +5,7 @@
 <main class="page full-height md:ali flex-col gap-5 md:flex-row">
 	<div class="page-section flex-2/3">
 		<h1 class="heading line-clamp-1">A community behind</h1>
-		<h1 class="heading line-clamp-1">every page of the internet</h1>
+		<h1 class="heading line-clamp-1">every page on the internet</h1>
 
 		<p class="mt-10 mb-2">join the mailing list!</p>
 		<form class="flex w-full flex-row gap-1">
