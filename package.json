@@ -36,6 +36,7 @@
 		]
 	},
 	"dependencies": {
+		"moment": "^2.30.1",
 		"sass": "^1.85.1"
 	}
 }

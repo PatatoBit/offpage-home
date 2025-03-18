@@ -9,19 +9,25 @@
 		<div class="max-w-2xs">
 			<img src="/icons/globe.svg" alt="Globe" class="w-10" />
 			<h4 class="font-bold">Works Everywhere</h4>
-			<p>Engage in discussions on any webpage, not just YouTube.</p>
+			<p>
+				Engage in discussions on any webpage, from Youtube to Wikipedia to the US.gov website. You
+				name it.
+			</p>
 		</div>
 
 		<div class="max-w-2xs">
 			<img src="/icons/users.svg" alt="Globe" class="w-10" />
 			<h4 class="font-bold">Independent Community</h4>
-			<p>Engage in discussions on any webpage, not just YouTube.</p>
+			<p>A separate, open space for discussions beyond platform restrictions.</p>
 		</div>
 
 		<div class="max-w-2xs">
 			<img src="/icons/media.svg" alt="Globe" class="w-10" />
 			<h4 class="font-bold">Media Support</h4>
-			<p>Share images and GIFs to enhance conversations.</p>
+			<p>
+				Share images and GIFs to enhance conversations. Imagine memes on research papers, or graphs
+				to fact check news.
+			</p>
 		</div>
 	</div>
 </section>
