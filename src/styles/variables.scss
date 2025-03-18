@@ -1,0 +1,15 @@
+:global(:root),
+html,
+body,
+* {
+	--background: #f5f3f0;
+	--text: #212121;
+	--text-light: #757575;
+
+	--primary: #2e2e2e;
+	--primary-light: #7a7a7a;
+	--border-var: rgb(200, 200, 200);
+	--inner-background: rgb(248, 248, 248);
+
+	--red: #ff4144;
+}
