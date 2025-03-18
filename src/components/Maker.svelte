@@ -1,7 +1,7 @@
 <div class="page full-height">
 	<div class="flex w-full flex-col gap-5 md:flex-row">
 		<div class="avatar">
-			<div class="w-48 rounded-2xl">
+			<div class="h-40 w-40 rounded-full">
 				<img src="/pat.jpeg" alt="Pat, the creator of offpage" />
 			</div>
 		</div>
