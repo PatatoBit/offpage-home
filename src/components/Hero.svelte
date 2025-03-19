@@ -8,13 +8,13 @@
 		<h1 class="heading line-clamp-1">every page on the internet</h1>
 
 		<p class="mt-10 mb-2">join the mailing list!</p>
-		<form class="flex w-full flex-row gap-1">
+		<form class="join flex w-full flex-row">
 			<label class="floating-label">
 				<span>Your Email</span>
-				<input type="email" placeholder="mail@site.com" class="input" />
+				<input type="email" placeholder="mail@site.com" class="input join-item" />
 			</label>
 
-			<button class="btn btn-primary" disabled type="submit">subscribe</button>
+			<button class="btn btn-primary join-item" disabled type="submit">subscribe</button>
 		</form>
 	</div>
 
