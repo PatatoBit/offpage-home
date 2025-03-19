@@ -11,7 +11,7 @@
 		<form class="join flex w-full flex-row">
 			<label class="floating-label">
 				<span>Your Email</span>
-				<input type="email" placeholder="mail@site.com" class="input join-item" />
+				<input type="email" placeholder="email@site.com" class="input join-item" />
 			</label>
 
 			<button class="btn btn-primary join-item" disabled type="submit">subscribe</button>

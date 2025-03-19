@@ -19,13 +19,7 @@
 			since 2025
 		</p>
 	</aside>
-	<nav>
-		<h6 class="footer-title">Services</h6>
-		<a class="link link-hover">Branding</a>
-		<a class="link link-hover">Design</a>
-		<a class="link link-hover">Marketing</a>
-		<a class="link link-hover">Advertisement</a>
-	</nav>
+
 	<nav>
 		<h6 class="footer-title">Company</h6>
 		<a class="link link-hover">About us</a>
@@ -44,7 +38,7 @@
 		<fieldset class="w-80">
 			<label>Enter your email address</label>
 			<div class="join">
-				<input type="text" placeholder="username@site.com" class="input input-bordered join-item" />
+				<input type="text" placeholder="email@site.com" class="input input-bordered join-item" />
 				<button class="btn btn-primary join-item" disabled>subscribe</button>
 			</div>
 		</fieldset>
