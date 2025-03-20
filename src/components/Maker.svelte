@@ -1,4 +1,4 @@
-<div class="page full-height">
+<div class="page">
 	<div class="flex w-full flex-col gap-5 md:flex-row">
 		<div class="avatar">
 			<div class="h-40 w-40 rounded-full">

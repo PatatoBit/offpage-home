@@ -5,7 +5,7 @@
 		from the web itself.
 	</p>
 
-	<video class="videoplayer" controls autoplay loop muted>
+	<video class="videoplayer" autoplay loop muted>
 		<source src="/demo.mp4" type="video/mp4" />
 		<track kind="captions" src="/demo_captions.vtt" srclang="en" label="English" />
 	</video>
