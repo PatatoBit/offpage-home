@@ -28,7 +28,7 @@
 
 		<p class="mt-10 mb-2">join the mailing list!</p>
 		<form
-			class="join flex w-full flex-row"
+			class="join flex w-full flex-row justify-center md:justify-normal"
 			onsubmit={async (e) => {
 				e.preventDefault();
 				await subscribe();
@@ -69,6 +69,13 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		min-height: 100%;
+
+		@media (max-width: 768px) {
+			margin-top: 7rem;
+
+			flex-direction: column;
+			text-align: center;
+			align-items: center;
+		}
 	}
 </style>
