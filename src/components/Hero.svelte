@@ -2,10 +2,10 @@
 	import ExtensionDemo from './ExtensionDemo.svelte';
 </script>
 
-<main class="page full-height md:ali flex-col gap-5 md:flex-row">
+<main class="page full-height md:ali mt-10 flex-col gap-5 md:mt-0 md:flex-row">
 	<div class="page-section flex-2/3">
-		<h1 class="heading line-clamp-1">A community behind</h1>
-		<h1 class="heading line-clamp-1">every page on the internet</h1>
+		<h1 class="heading">A community behind</h1>
+		<h1 class="heading">every page on the internet</h1>
 
 		<p class="mt-10 mb-2">join the mailing list!</p>
 		<form class="join flex w-full flex-row">

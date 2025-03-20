@@ -2,6 +2,12 @@
 	import moment from 'moment';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
+
+	import { isValidImage } from '$lib';
+	import Cross from '../../static/icons/cross.svg';
+	import Image from '../../static/icons/image.svg';
+	import ReturnIcon from '../../static/icons/return.svg';
+
 	interface CommentData {
 		content: string;
 		created_at: string;
@@ -64,6 +70,50 @@
 			}
 		}
 	]);
+
+	let inputRef: HTMLInputElement | null = null;
+	let file: File | null = null;
+	let currentFileUrl: string | null = null;
+
+	let currentComment: string = '';
+
+	// Handle form submission
+	const handleSubmit = async () => {
+		console.log('Submitting comment...');
+	};
+
+	async function handleEnterKey(event: KeyboardEvent) {
+		if (event.key === 'Enter' && !event.shiftKey) {
+			event.preventDefault(); // Prevent new line
+			await handleSubmit(); // Call submit function
+		}
+	}
+
+	function handleFileDrop(event: DragEvent) {
+		event.preventDefault();
+		const droppedFile = event.dataTransfer?.files[0];
+
+		if (droppedFile && isValidImage(droppedFile)) {
+			file = droppedFile;
+			currentFileUrl = URL.createObjectURL(file);
+		}
+	}
+
+	function handleFileSelect(event: Event) {
+		const selectedFile = (event.target as HTMLInputElement)?.files?.[0];
+		if (selectedFile && isValidImage(selectedFile)) {
+			file = selectedFile;
+			currentFileUrl = URL.createObjectURL(file);
+		} else {
+			console.error('Invalid file type.');
+		}
+	}
+
+	function triggerFileInput() {
+		if (inputRef) {
+			inputRef.click();
+		}
+	}
 </script>
 
 <div class="card">
@@ -137,6 +187,61 @@
 			</li>
 		{/each}
 	</ul>
+
+	<form
+		class="input-form"
+		onsubmit={async (event) => {
+			event.preventDefault();
+			await handleSubmit();
+		}}
+		ondragover={(event) => event.preventDefault()}
+		ondrop={handleFileDrop}
+	>
+		{#if currentFileUrl}
+			<div class="file-dropdown-area">
+				<div class="dropped-image">
+					<img src={currentFileUrl} alt="Dropped file" />
+
+					<button
+						onclick={() => {
+							file = null;
+							currentFileUrl = null;
+						}}
+					>
+						<img src={Cross} alt="Remove" />
+					</button>
+				</div>
+			</div>
+		{/if}
+
+		<textarea
+			bind:value={currentComment}
+			onkeydown={handleEnterKey}
+			placeholder="Share your thoughts..."
+			required
+			rows="3"
+			maxlength="500"
+		></textarea>
+
+		<!-- Hidden file input -->
+		<input
+			type="file"
+			bind:this={inputRef}
+			accept="image/png, image/jpeg, image/gif"
+			onchange={handleFileSelect}
+			hidden
+		/>
+
+		<div class="form-buttons">
+			<button type="button" class="file-input" onclick={triggerFileInput}>
+				<img src={Image} alt="File input" />
+			</button>
+
+			<button class="form-submit" type="submit">
+				<img src={ReturnIcon} alt="Return" />
+			</button>
+		</div>
+	</form>
 </div>
 
 <style lang="scss">
@@ -286,6 +391,124 @@
 
 			object-fit: contain;
 			object-position: left;
+		}
+	}
+
+	.file-dropdown-area {
+		position: absolute;
+		display: flex;
+		flex-direction: row;
+		/* overflow-x: scroll; */
+		gap: 0.5rem;
+		height: 10rem;
+		width: 100%;
+		top: -10.5rem;
+
+		.dropped-image {
+			position: relative;
+			border-radius: 0.5rem;
+			background-color: var(--border);
+
+			box-shadow: -1px 5px 7px 0px rgba(0, 0, 0, 0.17);
+			-webkit-box-shadow: -1px 5px 7px 0px rgba(0, 0, 0, 0.17);
+			-moz-box-shadow: -1px 5px 7px 0px rgba(0, 0, 0, 0.17);
+
+			button {
+				position: absolute;
+				top: -0.5rem;
+				right: -0.5rem;
+
+				background-color: var(--red);
+				border: none;
+				padding: 0.25rem;
+				border-radius: 50%;
+				cursor: pointer;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				img {
+					filter: invert(1);
+					width: 10px;
+					height: 10px;
+				}
+			}
+
+			img {
+				height: 100%;
+				width: auto;
+			}
+		}
+	}
+
+	.input-form {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		margin-bottom: 1rem;
+		flex: 1 1 1;
+
+		.form-buttons {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			gap: 0.5rem;
+
+			height: 2rem;
+
+			button {
+				cursor: pointer;
+			}
+		}
+
+		.file-input {
+			all: unset;
+			border: none;
+			cursor: pointer;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			transition: scale 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+			img {
+				width: 30px;
+				height: 30px;
+			}
+
+			&:hover {
+				transform: scale(1.05);
+			}
+		}
+
+		.form-submit {
+			background-color: var(--text);
+			color: var(--background);
+			border: none;
+			padding: 0.5rem 1rem;
+			border: 1px solid var(--text);
+			border-radius: 6px;
+			cursor: pointer;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			transition: scale 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+			img {
+				width: 20px;
+				height: 20px;
+
+				filter: invert(1);
+			}
+
+			&:hover {
+				transform: scale(1.05);
+			}
 		}
 	}
 </style>
