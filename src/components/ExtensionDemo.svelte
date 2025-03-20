@@ -50,8 +50,8 @@
 
 	let inputRef: HTMLInputElement | null = null;
 	let file: File | null = null;
-	let currentFileUrl: string | null = null;
-	let currentComment: string = '';
+	let currentFileUrl: string | null = $state(null);
+	let currentComment: string = $state('');
 
 	// Handle form submission
 	const handleSubmit = async () => {
@@ -94,7 +94,6 @@
 	onMount(() => {
 		const interval = setInterval(() => {
 			currentPageIndex = currentPageIndex === dummyData.pages.length - 1 ? 0 : currentPageIndex + 1;
-			console.log('Switching to next page...', currentPageIndex);
 		}, 5000);
 
 		return () => clearInterval(interval); // Cleanup on component unmount

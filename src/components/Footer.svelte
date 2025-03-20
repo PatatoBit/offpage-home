@@ -1,3 +1,25 @@
+<script lang="ts">
+	let email = $state('');
+	let signUpSuccess = $state(false);
+
+	async function subscribe() {
+		signUpSuccess = false;
+
+		const res = await fetch('/api/subscribe', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ email })
+		});
+
+		if (res.ok) {
+			signUpSuccess = true;
+			email = '';
+		} else {
+			alert('Something went wrong. Please try again.');
+		}
+	}
+</script>
+
 <footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
 	<aside>
 		<svg
@@ -38,9 +60,28 @@
 		<fieldset class="w-80">
 			<label>Enter your email address</label>
 			<div class="join">
-				<input type="text" placeholder="email@site.com" class="input input-bordered join-item" />
-				<button class="btn btn-primary join-item" disabled>subscribe</button>
+				<input
+					onsubmit={(e) => {
+						e.preventDefault();
+						subscribe();
+					}}
+					bind:value={email}
+					type="text"
+					placeholder="email@site.com"
+					class="input input-bordered join-item"
+				/>
+				<button
+					onclick={(e) => {
+						e.preventDefault();
+						subscribe();
+					}}
+					class="btn btn-primary join-item">subscribe</button
+				>
 			</div>
+
+			{#if signUpSuccess}
+				<p class="mt-2">✅Thank you for subscribing!</p>
+			{/if}
 		</fieldset>
 	</form>
 </footer>
