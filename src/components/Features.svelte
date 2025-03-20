@@ -1,9 +1,14 @@
-<section class="page mt-20 mb-30 content-center">
+<section class="page mt-20 mb-30 flex flex-col content-center gap-5">
 	<p>
 		<span class="font-bold underline">offpage</span>
 		is a browser extension that gives every page on the internet a place to chat, share, completely separately
 		from the web itself.
 	</p>
+
+	<video class="videoplayer" controls autoplay loop muted>
+		<source src="/demo.mp4" type="video/mp4" />
+		<track kind="captions" src="/demo_captions.vtt" srclang="en" label="English" />
+	</video>
 
 	<div class="features">
 		<div class="max-w-2xs">
@@ -34,9 +39,16 @@
 
 <style lang="scss">
 	.features {
-		margin-top: 5rem;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 		gap: 1rem;
+	}
+
+	.videoplayer {
+		border-radius: 0.8rem;
+
+		box-shadow: 1px 9px 10px 2px rgba(0, 0, 0, 0.16);
+		-webkit-box-shadow: 1px 9px 10px 2px rgba(0, 0, 0, 0.16);
+		-moz-box-shadow: 1px 9px 10px 2px rgba(0, 0, 0, 0.16);
 	}
 </style>
