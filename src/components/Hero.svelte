@@ -2,7 +2,7 @@
 	import ExtensionDemo from './ExtensionDemo.svelte';
 </script>
 
-<main class="page full-height md:ali mt-10 flex-col gap-5 md:mt-0 md:flex-row">
+<main class="page md">
 	<div class="page-section flex-2/3">
 		<h1 class="heading">A community behind</h1>
 		<h1 class="heading">every page on the internet</h1>
@@ -25,7 +25,10 @@
 	.page {
 		display: flex;
 		flex-direction: row;
-		flex-wrap: wrap;
+
+		@media (max-width: 768px) {
+			flex-direction: column;
+		}
 	}
 
 	.page-section {

@@ -1,0 +1,131 @@
+{
+	"pages": [
+		{
+			"url": "https://en.wikipedia.org/wiki/Climate_change",
+			"comments": [
+				{
+					"author": "@EcoWarrior23",
+					"content": "This article is mostly accurate, but the economic impact section downplays renewable energy benefits. Sources?"
+				},
+				{
+					"author": "@Skeptic101",
+					"content": "Where’s the proof that CO2 is the main driver of climate change? The medieval warm period was just as hot."
+				},
+				{
+					"author": "@ScienceFactsBot",
+					"content": "IPCC reports confirm human-driven climate change. See: [link] 🔗"
+				},
+				{
+					"author": "@NeutralMod",
+					"content": "If there’s a debate, let’s suggest sources instead of arguing. Wikipedia is for verified info, not opinions."
+				}
+			]
+		},
+		{
+			"url": "https://www.whitehouse.gov/economic-policies",
+			"comments": [
+				{
+					"author": "@TaxPayerJoe",
+					"content": "Lowering corporate taxes is just a way to help billionaires. Where’s the plan for the middle class?"
+				},
+				{
+					"author": "@FreeMarket88",
+					"content": "Actually, lowering corporate taxes can encourage job creation. See economic data here: [link] 📊"
+				},
+				{
+					"author": "@FactChecker24",
+					"content": "Misleading: The jobs data cited doesn’t confirm long-term benefits. Read this unbiased report: [link] ✅"
+				},
+				{
+					"author": "@PatriotMike",
+					"content": "Can we discuss this without resorting to name-calling? Both sides have valid concerns."
+				}
+			]
+		},
+		{
+			"url": "https://www.bbc.com/news/elections-2024",
+			"comments": [
+				{
+					"author": "@VoterRightNow",
+					"content": "This article leans left. Where’s the coverage on the opposition’s response?"
+				},
+				{
+					"author": "@NewsCritic99",
+					"content": "Bias is everywhere. BBC used to be neutral, but this article omits key facts."
+				},
+				{
+					"author": "@FactCheckJournal",
+					"content": "Some claims in this article lack sources. Look at these fact-checked sources: [link] 🧐"
+				}
+			]
+		},
+		{
+			"url": "https://weather.com/storms/hurricane-ian",
+			"comments": [
+				{
+					"author": "@StormTracker01",
+					"content": "Winds just hit 120mph in Florida! Stay indoors. Live updates here: [link] 🌀"
+				},
+				{
+					"author": "@LocalRescue",
+					"content": "If you need shelter in Miami, check this list: [link] 🏠"
+				},
+				{
+					"author": "@SafeZoneUser",
+					"content": "Gas stations in Orlando are running low. Stock up before the roads flood!"
+				}
+			]
+		},
+		{
+			"url": "https://www.reddit.com/r/AI_Art_Ethics",
+			"comments": [
+				{
+					"author": "@TraditionalArtist",
+					"content": "AI-generated art is stealing from real artists! We need stricter regulations."
+				},
+				{
+					"author": "@TechInnovator",
+					"content": "It’s just another tool. Didn’t digital art face the same backlash once?"
+				},
+				{
+					"author": "@EthicsMod",
+					"content": "Both sides raise valid points. Let’s focus on balancing innovation with fair compensation."
+				}
+			]
+		},
+		{
+			"url": "https://twitter.com/elonmusk",
+			"comments": [
+				{
+					"author": "@Fanboy69",
+					"content": "Elon is a genius! Everything he does changes the world. 🚀"
+				},
+				{
+					"author": "@SkepticTech",
+					"content": "Or maybe he’s just great at marketing? Let’s be real, Tesla isn’t the only EV player."
+				},
+				{
+					"author": "@DataNerd",
+					"content": "Musk’s tweets move markets. Is that a good thing or market manipulation?"
+				}
+			]
+		},
+		{
+			"url": "https://www.amazon.com/product/iphone-15-pro",
+			"comments": [
+				{
+					"author": "@AppleLover23",
+					"content": "Best iPhone yet! Battery lasts me all day. Totally worth it. ⭐⭐⭐⭐⭐"
+				},
+				{
+					"author": "@AndroidFanboy",
+					"content": "Overpriced for minor upgrades. Get a Pixel for half the price."
+				},
+				{
+					"author": "@TechReviewer",
+					"content": "Camera is great, but overheating is a real issue. Be aware!"
+				}
+			]
+		}
+	]
+}

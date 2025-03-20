@@ -3,7 +3,8 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
-	import { isValidImage } from '$lib';
+	import { getBaseUrlAndPath, isValidImage } from '$lib';
+	import dummyData from '$lib/dummy.json';
 	import Cross from '../../static/icons/cross.svg';
 	import Image from '../../static/icons/image.svg';
 	import ReturnIcon from '../../static/icons/return.svg';
@@ -21,60 +22,35 @@
 	let { likes, dislikes } = $state({ likes: 0, dislikes: 0 });
 
 	let icon = $state('https://placehold.co/300');
+	let currentPageIndex = $state(0);
 
 	let currentUrlSplit: {
 		baseUrl: string;
 		domain: string;
 		route: string;
-	} = $state({
-		baseUrl: 'offpage.app',
-		domain: 'offpage.app',
-		route: ''
+	} = $derived({
+		baseUrl: dummyData.pages[currentPageIndex].url,
+		domain: getBaseUrlAndPath(dummyData.pages[currentPageIndex].url)?.domain || '',
+		route: getBaseUrlAndPath(dummyData.pages[currentPageIndex].url)?.route || ''
 	});
 
-	let comments: CommentData[] = $state([
-		{
-			content: 'This is a comment',
-			created_at: '2021-09-01T00:00:00Z',
-			image_url: 'https://placehold.co/400',
-			profiles: {
-				avatar_url: 'https://placehold.co/400',
-				username: 'Pat'
-			}
-		},
-		{
-			content: 'This is another comment',
-			created_at: '2021-09-01T00:00:00Z',
-			image_url: 'https://placehold.co/400',
-			profiles: {
-				avatar_url: 'https://placehold.co/400',
-				username: 'Pat'
-			}
-		},
-		{
-			content: 'This is a comment',
-			created_at: '2021-09-01T00:00:00Z',
-			image_url: 'https://placehold.co/400',
-			profiles: {
-				avatar_url: 'https://placehold.co/400',
-				username: 'Pat'
-			}
-		},
-		{
-			content: 'This is another comment',
-			created_at: '2021-09-01T00:00:00Z',
-			image_url: 'https://placehold.co/400',
-			profiles: {
-				avatar_url: 'https://placehold.co/400',
-				username: 'Pat'
-			}
-		}
-	]);
+	let comments: CommentData[] = $derived(
+		dummyData.pages[currentPageIndex].comments.map((comment) => {
+			return {
+				content: comment.content,
+				created_at: new Date().toISOString(),
+				image_url: '',
+				profiles: {
+					avatar_url: `https://api.dicebear.com/9.x/dylan/svg?seed=${comment.author}`,
+					username: comment.author
+				}
+			};
+		})
+	);
 
 	let inputRef: HTMLInputElement | null = null;
 	let file: File | null = null;
 	let currentFileUrl: string | null = null;
-
 	let currentComment: string = '';
 
 	// Handle form submission
@@ -114,9 +90,18 @@
 			inputRef.click();
 		}
 	}
+
+	onMount(() => {
+		const interval = setInterval(() => {
+			currentPageIndex = currentPageIndex === dummyData.pages.length - 1 ? 0 : currentPageIndex + 1;
+			console.log('Switching to next page...', currentPageIndex);
+		}, 5000);
+
+		return () => clearInterval(interval); // Cleanup on component unmount
+	});
 </script>
 
-<div class="card">
+<div class="card mt-5 md:mt-0">
 	<div class="header">
 		<div class="domain-route">
 			{#if currentUrlSplit?.route}
@@ -153,8 +138,8 @@
 	</div>
 
 	<ul class="comments">
-		{#each comments as comment}
-			<li transition:fade>
+		{#each comments as comment, index}
+			<li transition:fade={{ duration: 300, delay: index * 100 }}>
 				<div class="comment">
 					<div class="user-profile">
 						{#if comment.profiles}
@@ -266,8 +251,8 @@
 		margin-inline: auto;
 
 		background: white;
-		width: 18rem;
-		max-height: 40rem;
+		width: 20rem;
+		height: 40rem;
 		box-sizing: border-box;
 
 		padding: 1rem;
