@@ -1,7 +1,15 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import '../app.css';
 	import '../styles/global.scss';
 	import '../styles/variables.scss';
+
+	import { dev } from '$app/environment';
+	import { injectAnalytics } from '@vercel/analytics/sveltekit';
+	onMount(() => {
+		injectAnalytics({ mode: dev ? 'development' : 'production' });
+	});
+
 	let { children } = $props();
 </script>
 

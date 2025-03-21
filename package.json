@@ -37,6 +37,7 @@
 	},
 	"dependencies": {
 		"@mailerlite/mailerlite-nodejs": "^1.4.0",
+		"@vercel/analytics": "^1.5.0",
 		"moment": "^2.30.1",
 		"sass": "^1.85.1"
 	}
