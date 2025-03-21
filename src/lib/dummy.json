@@ -1,129 +1,104 @@
 {
 	"pages": [
 		{
-			"url": "https://en.wikipedia.org/wiki/Climate_change",
+			"url": "https://www.reuters.com/article/latest-news",
 			"comments": [
 				{
-					"author": "@EcoWarrior23",
-					"content": "This article is mostly accurate, but the economic impact section downplays renewable energy benefits. Sources?"
+					"author": "@GlobalWatcher",
+					"content": "This article presents facts, but lacks context on how policies affect developing nations."
 				},
 				{
-					"author": "@Skeptic101",
-					"content": "Where’s the proof that CO2 is the main driver of climate change? The medieval warm period was just as hot."
+					"author": "@NewsSkeptic",
+					"content": "Reuters claims neutrality, but this piece feels slanted. Thoughts?"
 				},
 				{
-					"author": "@ScienceFactsBot",
-					"content": "IPCC reports confirm human-driven climate change. See: [link] 🔗"
-				},
-				{
-					"author": "@NeutralMod",
-					"content": "If there’s a debate, let’s suggest sources instead of arguing. Wikipedia is for verified info, not opinions."
+					"author": "@FactCheckBot",
+					"content": "Sources check out, but additional reports suggest a different angle: [link]"
 				}
 			]
 		},
 		{
-			"url": "https://www.whitehouse.gov/economic-policies",
+			"url": "https://www.youtube.com/watch?v=dummy_video",
 			"comments": [
 				{
-					"author": "@TaxPayerJoe",
-					"content": "Lowering corporate taxes is just a way to help billionaires. Where’s the plan for the middle class?"
+					"author": "@VideoLover",
+					"content": "Why are comments disabled? This is an important discussion!"
 				},
 				{
-					"author": "@FreeMarket88",
-					"content": "Actually, lowering corporate taxes can encourage job creation. See economic data here: [link] 📊"
+					"author": "@Critic42",
+					"content": "This video presents only one side of the story. Where’s the counterpoint?"
 				},
 				{
-					"author": "@FactChecker24",
-					"content": "Misleading: The jobs data cited doesn’t confirm long-term benefits. Read this unbiased report: [link] ✅"
-				},
-				{
-					"author": "@PatriotMike",
-					"content": "Can we discuss this without resorting to name-calling? Both sides have valid concerns."
+					"author": "@YTWatcher",
+					"content": "Anyone have sources to back up or refute these claims?"
 				}
 			]
 		},
 		{
-			"url": "https://www.bbc.com/news/elections-2024",
+			"url": "https://scholar.google.com/scholar?q=climate+change",
 			"comments": [
 				{
-					"author": "@VoterRightNow",
-					"content": "This article leans left. Where’s the coverage on the opposition’s response?"
+					"author": "@PhDResearcher",
+					"content": "This study lacks long-term data. Does anyone have supplementary research?"
 				},
 				{
-					"author": "@NewsCritic99",
-					"content": "Bias is everywhere. BBC used to be neutral, but this article omits key facts."
+					"author": "@Student101",
+					"content": "Great read! Can someone simplify the findings for a non-expert?"
 				},
 				{
-					"author": "@FactCheckJournal",
-					"content": "Some claims in this article lack sources. Look at these fact-checked sources: [link] 🧐"
+					"author": "@DataScientist",
+					"content": "Figures in Table 3 seem inconsistent with prior studies. What’s the consensus?"
 				}
 			]
 		},
 		{
-			"url": "https://weather.com/storms/hurricane-ian",
+			"url": "https://www.apple.com/store/iphone-15",
 			"comments": [
 				{
-					"author": "@StormTracker01",
-					"content": "Winds just hit 120mph in Florida! Stay indoors. Live updates here: [link] 🌀"
+					"author": "@TechEnthusiast",
+					"content": "Apple reviews are curated. Let’s be real—what are the actual downsides?"
 				},
 				{
-					"author": "@LocalRescue",
-					"content": "If you need shelter in Miami, check this list: [link] 🏠"
+					"author": "@GadgetFan",
+					"content": "Battery life still isn't great compared to Android. Confirmed?"
 				},
 				{
-					"author": "@SafeZoneUser",
-					"content": "Gas stations in Orlando are running low. Stock up before the roads flood!"
+					"author": "@RealUser123",
+					"content": "Had mine for a month. Face ID is buggy. Anyone else?"
 				}
 			]
 		},
 		{
-			"url": "https://www.reddit.com/r/AI_Art_Ethics",
+			"url": "https://indieblogger.com/article-about-modern-architecture",
 			"comments": [
 				{
-					"author": "@TraditionalArtist",
-					"content": "AI-generated art is stealing from real artists! We need stricter regulations."
+					"author": "@ArchLover",
+					"content": "Fascinating perspective! But missing historical context on brutalism."
 				},
 				{
-					"author": "@TechInnovator",
-					"content": "It’s just another tool. Didn’t digital art face the same backlash once?"
+					"author": "@DesignCritic",
+					"content": "The examples used feel cherry-picked. Any sources for alternative views?"
 				},
 				{
-					"author": "@EthicsMod",
-					"content": "Both sides raise valid points. Let’s focus on balancing innovation with fair compensation."
+					"author": "@UrbanPlanner",
+					"content": "Would love to see more about how zoning laws impact these designs."
 				}
 			]
 		},
 		{
-			"url": "https://twitter.com/elonmusk",
+			"url": "https://www.whitehouse.gov/policy-announcement",
 			"comments": [
 				{
-					"author": "@Fanboy69",
-					"content": "Elon is a genius! Everything he does changes the world. 🚀"
+					"author": "@CivicEngaged",
+					"content": "How will this policy be implemented in local communities?"
 				},
 				{
-					"author": "@SkepticTech",
-					"content": "Or maybe he’s just great at marketing? Let’s be real, Tesla isn’t the only EV player."
+					"author": "@PoliticalDebater",
+					"content": "There’s no cost breakdown. Who’s funding this?"
 				},
 				{
-					"author": "@DataNerd",
-					"content": "Musk’s tweets move markets. Is that a good thing or market manipulation?"
-				}
-			]
-		},
-		{
-			"url": "https://www.amazon.com/product/iphone-15-pro",
-			"comments": [
-				{
-					"author": "@AppleLover23",
-					"content": "Best iPhone yet! Battery lasts me all day. Totally worth it. ⭐⭐⭐⭐⭐"
-				},
-				{
-					"author": "@AndroidFanboy",
-					"content": "Overpriced for minor upgrades. Get a Pixel for half the price."
-				},
-				{
-					"author": "@TechReviewer",
-					"content": "Camera is great, but overheating is a real issue. Be aware!"
+					"author": "@PolicyAnalyst",
+					"content": "Similar policies failed in the past. Any adjustments this time?"
 				}
 			]
 		}

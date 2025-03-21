@@ -26,7 +26,7 @@
 		<h1 class="heading">A community behind</h1>
 		<h1 class="heading">every page on the internet</h1>
 
-		<p class="mt-10 mb-2">join the mailing list!</p>
+		<p class="mt-10 mb-2">Be the first to know when offpage launches! Sign up for updates.</p>
 		<form
 			class="join flex w-full flex-row justify-center md:justify-normal"
 			onsubmit={async (e) => {
