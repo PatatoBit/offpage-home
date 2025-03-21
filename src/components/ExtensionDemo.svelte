@@ -156,7 +156,11 @@
 							{#if comment.profiles}
 								<h5>{comment.profiles.username}</h5>
 							{/if}
-							<h5 class="label">
+							<h5 class="label block md:hidden">
+								{moment.utc(comment.created_at).format('ll')}
+							</h5>
+
+							<h5 class="label hidden md:block">
 								{moment.utc(comment.created_at).local().startOf('second').fromNow()}
 							</h5>
 						</div>
@@ -253,6 +257,10 @@
 		width: 20rem;
 		height: 40rem;
 		box-sizing: border-box;
+
+		@media screen and (min-width: 768px) {
+			width: 30rem;
+		}
 
 		padding: 1rem;
 		border-radius: 0.8rem;
