@@ -257,14 +257,13 @@
 
 	.page-image {
 		border-radius: 1rem;
+
+		@media screen and (max-width: 768px) {
+			display: none;
+		}
 	}
 
 	.card {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		right: 1.5rem;
-
 		display: flex;
 		flex-direction: column;
 		justify-self: flex-end;
@@ -276,7 +275,10 @@
 		box-sizing: border-box;
 
 		@media screen and (min-width: 768px) {
-			width: 20rem;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 1.5rem;
 		}
 
 		padding: 1rem;
