@@ -36,6 +36,7 @@
 		]
 	},
 	"dependencies": {
+		"@lucide/svelte": "^0.501.0",
 		"@mailerlite/mailerlite-nodejs": "^1.4.0",
 		"@vercel/analytics": "^1.5.0",
 		"moment": "^2.30.1",

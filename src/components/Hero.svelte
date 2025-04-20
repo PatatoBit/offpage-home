@@ -1,5 +1,6 @@
-<script>
+<script lang="ts">
 	import ExtensionDemo from './ExtensionDemo.svelte';
+	import { MessageSquareDot } from '@lucide/svelte';
 
 	let email = $state('');
 	let signUpSuccess = $state(false);
@@ -27,25 +28,35 @@
 		<h1 class="heading">every page on the internet</h1>
 
 		<p class="mt-10 mb-2">Be the first to know when offpage launches! Sign up for updates.</p>
-		<form
-			class="join flex w-full flex-row justify-center md:justify-normal"
-			onsubmit={async (e) => {
-				e.preventDefault();
-				await subscribe();
-			}}
-		>
-			<label class="floating-label">
-				<span>Your Email</span>
-				<input
-					bind:value={email}
-					type="email"
-					placeholder="email@site.com"
-					class="input join-item"
-				/>
-			</label>
 
-			<button class="btn btn-primary join-item" type="submit">subscribe</button>
-		</form>
+		<div class="flex flex-row flex-wrap justify-center gap-2">
+			<form
+				class="join flex w-full flex-row justify-center md:justify-normal"
+				onsubmit={async (e) => {
+					e.preventDefault();
+					await subscribe();
+				}}
+			>
+				<label class="floating-label">
+					<span>Your Email</span>
+					<input
+						bind:value={email}
+						type="email"
+						placeholder="email@site.com"
+						class="input join-item"
+					/>
+				</label>
+
+				<button class="btn btn-primary join-item" type="submit">subscribe</button>
+			</form>
+
+			<a href="https://discord.gg/nRSUg3t6Ag" target="_blank">
+				<button class="btn btn-outline">
+					<MessageSquareDot />
+					Join our Discord
+				</button>
+			</a>
+		</div>
 
 		{#if signUpSuccess}
 			<p class="mt-2">✅Thank you for subscribing!</p>
