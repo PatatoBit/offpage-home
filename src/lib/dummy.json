@@ -2,6 +2,7 @@
 	"pages": [
 		{
 			"url": "https://www.reuters.com/article/latest-news",
+			"preview_image": "/pages/reuters.png",
 			"comments": [
 				{
 					"author": "@GlobalWatcher",
@@ -19,6 +20,7 @@
 		},
 		{
 			"url": "https://www.youtube.com/watch?v=dummy_video",
+			"preview_image": "/pages/youtube.png",
 			"comments": [
 				{
 					"author": "@VideoLover",
@@ -36,6 +38,7 @@
 		},
 		{
 			"url": "https://scholar.google.com/scholar?q=climate+change",
+			"preview_image": "/pages/scholar.png",
 			"comments": [
 				{
 					"author": "@PhDResearcher",
@@ -53,6 +56,7 @@
 		},
 		{
 			"url": "https://www.apple.com/store/iphone-15",
+			"preview_image": "/pages/apple.png",
 			"comments": [
 				{
 					"author": "@TechEnthusiast",
@@ -69,24 +73,8 @@
 			]
 		},
 		{
-			"url": "https://indieblogger.com/article-about-modern-architecture",
-			"comments": [
-				{
-					"author": "@ArchLover",
-					"content": "Fascinating perspective! But missing historical context on brutalism."
-				},
-				{
-					"author": "@DesignCritic",
-					"content": "The examples used feel cherry-picked. Any sources for alternative views?"
-				},
-				{
-					"author": "@UrbanPlanner",
-					"content": "Would love to see more about how zoning laws impact these designs."
-				}
-			]
-		},
-		{
 			"url": "https://www.whitehouse.gov/policy-announcement",
+			"preview_image": "/pages/whitehouse.png",
 			"comments": [
 				{
 					"author": "@CivicEngaged",

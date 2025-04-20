@@ -58,17 +58,26 @@
 <style>
 	.page {
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 
-		@media (max-width: 768px) {
-			flex-direction: column;
-		}
+		padding-top: 5rem;
 	}
 
 	.page-section {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		align-items: center;
+		text-align: center;
+
+		form {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+
+		margin-bottom: 5rem;
 
 		@media (max-width: 768px) {
 			margin-top: 7rem;

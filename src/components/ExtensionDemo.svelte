@@ -100,136 +100,140 @@
 	});
 </script>
 
-<div class="card mt-5 md:mt-0">
-	<div class="header">
-		<div class="domain-route">
-			{#if currentUrlSplit?.route}
-				<div class="domain">
-					{#if icon}
-						<img class="webicon" src={icon} alt=" " />
-					{/if}
+<div class="demo-group">
+	<img class="page-image" src={dummyData.pages[currentPageIndex].preview_image} alt="Web preview" />
 
-					<strong>{currentUrlSplit?.domain}</strong>
-				</div>
-
-				<h2>{currentUrlSplit?.route}</h2>
-			{:else}
-				<div class="domain">
-					{#if icon}
-						<img class="webicon" src={icon} alt=" " />
-					{/if}
-
-					<h2>{currentUrlSplit?.domain}</h2>
-				</div>
-			{/if}
-		</div>
-
-		<div class="votes-button">
-			<button onclick={() => likes++}>
-				<span>👍</span>
-				<span>{likes}</span>
-			</button>
-			<button onclick={() => dislikes++}>
-				<span>👎</span>
-				<span>{dislikes}</span>
-			</button>
-		</div>
-	</div>
-
-	<ul class="comments">
-		{#each comments as comment, index}
-			<li transition:fade={{ duration: 300, delay: index * 100 }}>
-				<div class="comment">
-					<div class="user-profile">
-						{#if comment.profiles}
-							<img
-								src={comment.profiles.avatar_url}
-								alt={comment.profiles.username + "'s avatar"}
-							/>
-						{:else}
-							<img src="https://placehold.co/400" alt="Placeholder" />
+	<div class="card mt-5 md:mt-0">
+		<div class="header">
+			<div class="domain-route">
+				{#if currentUrlSplit?.route}
+					<div class="domain">
+						{#if icon}
+							<img class="webicon" src={icon} alt=" " />
 						{/if}
+
+						<strong>{currentUrlSplit?.domain}</strong>
 					</div>
 
-					<div class="comment-main">
-						<div class="comment-header">
-							{#if comment.profiles}
-								<h5>{comment.profiles.username}</h5>
-							{/if}
-							<h5 class="label block md:hidden">
-								{moment.utc(comment.created_at).format('ll')}
-							</h5>
+					<h2>{currentUrlSplit?.route}</h2>
+				{:else}
+					<div class="domain">
+						{#if icon}
+							<img class="webicon" src={icon} alt=" " />
+						{/if}
 
-							<h5 class="label hidden md:block">
-								{moment.utc(comment.created_at).local().startOf('second').fromNow()}
-							</h5>
+						<h2>{currentUrlSplit?.domain}</h2>
+					</div>
+				{/if}
+			</div>
+
+			<div class="votes-button">
+				<button onclick={() => likes++}>
+					<span>👍</span>
+					<span>{likes}</span>
+				</button>
+				<button onclick={() => dislikes++}>
+					<span>👎</span>
+					<span>{dislikes}</span>
+				</button>
+			</div>
+		</div>
+
+		<ul class="comments">
+			{#each comments as comment, index}
+				<li transition:fade={{ duration: 300, delay: index * 100 }}>
+					<div class="comment">
+						<div class="user-profile">
+							{#if comment.profiles}
+								<img
+									src={comment.profiles.avatar_url}
+									alt={comment.profiles.username + "'s avatar"}
+								/>
+							{:else}
+								<img src="https://placehold.co/400" alt="Placeholder" />
+							{/if}
 						</div>
 
-						<p>{comment.content}</p>
+						<div class="comment-main">
+							<div class="comment-header">
+								{#if comment.profiles}
+									<h5>{comment.profiles.username}</h5>
+								{/if}
+								<h5 class="label block md:hidden">
+									{moment.utc(comment.created_at).format('ll')}
+								</h5>
 
-						{#if comment.image_url}
-							<img src={comment.image_url} alt={comment.content} />
-						{/if}
+								<h5 class="label hidden md:block">
+									{moment.utc(comment.created_at).local().startOf('second').fromNow()}
+								</h5>
+							</div>
+
+							<p>{comment.content}</p>
+
+							{#if comment.image_url}
+								<img src={comment.image_url} alt={comment.content} />
+							{/if}
+						</div>
+					</div>
+				</li>
+			{/each}
+		</ul>
+
+		<form
+			class="input-form"
+			onsubmit={async (event) => {
+				event.preventDefault();
+				await handleSubmit();
+			}}
+			ondragover={(event) => event.preventDefault()}
+			ondrop={handleFileDrop}
+		>
+			{#if currentFileUrl}
+				<div class="file-dropdown-area">
+					<div class="dropped-image">
+						<img src={currentFileUrl} alt="Dropped file" />
+
+						<button
+							onclick={() => {
+								file = null;
+								currentFileUrl = null;
+							}}
+						>
+							<img src={Cross} alt="Remove" />
+						</button>
 					</div>
 				</div>
-			</li>
-		{/each}
-	</ul>
+			{/if}
 
-	<form
-		class="input-form"
-		onsubmit={async (event) => {
-			event.preventDefault();
-			await handleSubmit();
-		}}
-		ondragover={(event) => event.preventDefault()}
-		ondrop={handleFileDrop}
-	>
-		{#if currentFileUrl}
-			<div class="file-dropdown-area">
-				<div class="dropped-image">
-					<img src={currentFileUrl} alt="Dropped file" />
+			<textarea
+				bind:value={currentComment}
+				onkeydown={handleEnterKey}
+				placeholder="Share your thoughts..."
+				required
+				rows="3"
+				maxlength="500"
+			></textarea>
 
-					<button
-						onclick={() => {
-							file = null;
-							currentFileUrl = null;
-						}}
-					>
-						<img src={Cross} alt="Remove" />
-					</button>
-				</div>
+			<!-- Hidden file input -->
+			<input
+				type="file"
+				bind:this={inputRef}
+				accept="image/png, image/jpeg, image/gif"
+				onchange={handleFileSelect}
+				hidden
+			/>
+
+			<div class="form-buttons">
+				<button type="button" class="file-input" onclick={triggerFileInput}>
+					<img src={Image} alt="File input" />
+				</button>
+
+				<button class="form-submit" type="submit">
+					<img src={ReturnIcon} alt="Return" />
+				</button>
 			</div>
-		{/if}
-
-		<textarea
-			bind:value={currentComment}
-			onkeydown={handleEnterKey}
-			placeholder="Share your thoughts..."
-			required
-			rows="3"
-			maxlength="500"
-		></textarea>
-
-		<!-- Hidden file input -->
-		<input
-			type="file"
-			bind:this={inputRef}
-			accept="image/png, image/jpeg, image/gif"
-			onchange={handleFileSelect}
-			hidden
-		/>
-
-		<div class="form-buttons">
-			<button type="button" class="file-input" onclick={triggerFileInput}>
-				<img src={Image} alt="File input" />
-			</button>
-
-			<button class="form-submit" type="submit">
-				<img src={ReturnIcon} alt="Return" />
-			</button>
-		</div>
-	</form>
+		</form>
+	</div>
 </div>
 
 <style lang="scss">
@@ -247,7 +251,20 @@
 		height: 20px;
 	}
 
+	.demo-group {
+		position: relative;
+	}
+
+	.page-image {
+		border-radius: 1rem;
+	}
+
 	.card {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 1.5rem;
+
 		display: flex;
 		flex-direction: column;
 		justify-self: flex-end;
@@ -259,7 +276,7 @@
 		box-sizing: border-box;
 
 		@media screen and (min-width: 768px) {
-			width: 30rem;
+			width: 20rem;
 		}
 
 		padding: 1rem;
