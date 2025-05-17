@@ -2,7 +2,7 @@
 	<div class="flex w-full flex-col gap-5 md:flex-row">
 		<div class="avatar">
 			<div class="h-40 w-40 rounded-full">
-				<img src="/pat.jpeg" alt="Pat, the creator of offpage" />
+				<img src="/patato.jpeg" alt="Pat, the creator of offpage" />
 			</div>
 		</div>
 
