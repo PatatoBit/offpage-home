@@ -1,6 +1,6 @@
 <script lang="ts">
 	import ExtensionDemo from './ExtensionDemo.svelte';
-	import { MessageSquareDot } from '@lucide/svelte';
+	import { Chrome, MessageSquareDot } from '@lucide/svelte';
 
 	let email = $state('');
 	let signUpSuccess = $state(false);
@@ -50,8 +50,18 @@
 				<button class="btn btn-primary join-item" type="submit">subscribe</button>
 			</form>
 
+			<a
+				href="https://chromewebstore.google.com/detail/offpage/clgafhkbgicieicfpfdhhfkajdfnglfn"
+				target="_blank"
+			>
+				<button class="btn">
+					<Chrome />
+					Install the Beta
+				</button>
+			</a>
+
 			<a href="https://discord.gg/nRSUg3t6Ag" target="_blank">
-				<button class="btn btn-outline">
+				<button class="btn">
 					<MessageSquareDot />
 					Join our Discord
 				</button>
