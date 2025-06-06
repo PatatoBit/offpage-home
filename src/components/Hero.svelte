@@ -27,7 +27,9 @@
 		<h1 class="heading">A community behind</h1>
 		<h1 class="heading">every page on the internet</h1>
 
-		<p class="mt-10 mb-2">Be the first to know when offpage launches! Sign up for updates.</p>
+		<p class="mt-10 mb-2">
+			Offpage is a browser extension that brings commenting to every website on the internet
+		</p>
 
 		<div class="flex flex-row flex-wrap justify-center gap-2">
 			<form
